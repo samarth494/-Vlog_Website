@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import SplashScreen from './components/SplashScreen';
+import Dashboard from './pages/Dashboard';
 
 function App() {
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 5000); // 5 seconds
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      {loading ? (
+        <SplashScreen />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+        </Routes>
+      )}
+    </Router>
   );
 }
 
