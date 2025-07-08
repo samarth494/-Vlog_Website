@@ -1,0 +1,45 @@
+/* src/components/LoadingScreen.css */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000; /* background color of the page */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  opacity: 1;
+  animation: fadeInOut 3s ease-out;
+}
+
+.logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 50%; /* Making the logo circular to blend smoothly */
+  background: transparent; /* Ensures no visible background */
+  box-shadow: none; /* Optional: Remove shadow if any */
+}
+
+.loading-text {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  animation: fadeIn 3s ease-out;
+}
+
+/* Fade in and out animation for the loading screen */
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
