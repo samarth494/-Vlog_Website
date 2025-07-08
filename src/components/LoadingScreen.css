@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000; /* background color of the page */
+  background-color: #000; /* The background color */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,9 +19,9 @@
   width: 200px;
   height: auto;
   margin-bottom: 20px;
-  border-radius: 50%; /* Making the logo circular to blend smoothly */
-  background: transparent; /* Ensures no visible background */
-  box-shadow: none; /* Optional: Remove shadow if any */
+  background: transparent;  /* Ensures logo background is transparent */
+  border-radius: 50%; /* Optional: Makes logo circular */
+  box-shadow: none; /* Optional: Remove shadow */
 }
 
 .loading-text {
