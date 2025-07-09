@@ -1,9 +1,12 @@
 import React from 'react';
+import HeroBanner from '../components/HeroBanner';
+import VideoFeed from '../components/VideoFeed';
 
 function Dashboard() {
   return (
-    <div style={{ padding: '40px', color: 'white', background: '#111', height: '100vh' }}>
-      <h1>Welcome to your Dashboard</h1>
+    <div style={{ background: '#121212', minHeight: '100vh' }}>
+      <HeroBanner />
+      <VideoFeed />
     </div>
   );
 }

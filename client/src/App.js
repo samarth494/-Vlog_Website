@@ -1,6 +1,5 @@
-// src/App.js
-import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SplashScreen from './components/SplashScreen';
 import Dashboard from './pages/Dashboard';
 

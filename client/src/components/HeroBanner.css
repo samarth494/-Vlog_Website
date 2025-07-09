@@ -1,0 +1,30 @@
+.hero-banner {
+  background: linear-gradient(to right, #1a1a1a, #0f0f0f);
+  color: white;
+  padding: 60px 40px;
+  text-align: center;
+}
+
+.hero-banner h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-banner p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.hero-banner button {
+  background-color: #ff4747;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.hero-banner button:hover {
+  background-color: #e63e3e;
+}

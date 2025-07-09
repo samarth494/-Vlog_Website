@@ -1,0 +1,26 @@
+.video-grid {
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.loading-container {
+  text-align: center;
+  padding: 20px;
+}
+
+.loader {
+  border: 6px solid #222;
+  border-top: 6px solid #ff4747;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.9s linear infinite;
+  margin: auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,11 @@
+.dashboard-body {
+  display: flex;
+}
+
+.video-section {
+  flex: 1;
+  padding: 20px;
+  background-color: #121212;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+}

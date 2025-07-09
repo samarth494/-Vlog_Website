@@ -1,0 +1,21 @@
+.tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 20px;
+}
+
+.tag-container button {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.tag-container button:hover {
+  background-color: #ff4747;
+}
