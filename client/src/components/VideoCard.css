@@ -14,3 +14,7 @@
   color: #999;
   font-size: 14px;
 }
+.video-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
