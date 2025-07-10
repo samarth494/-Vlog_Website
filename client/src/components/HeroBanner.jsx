@@ -1,7 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './HeroBanner.css';
 
 function HeroBanner() {
+  const navigate = useNavigate();
+
   return (
     <div className="hero-banner">
       <h1>Unleash Your Story with Vlogify 🎥</h1>

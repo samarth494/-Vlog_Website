@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import './LoginPage.css';  // Correct CSS file for Login Page
-import { FaEye, FaEyeSlash, FaUserCircle } from 'react-icons/fa';  // Icons
+import './SignInPage.css';
+import { FaEye, FaEyeSlash, FaUserCircle } from 'react-icons/fa';  // User icon for avatar
 import { Link } from 'react-router-dom';  // For routing
 
-function LoginPage() {
+function SignInPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
@@ -19,19 +19,19 @@ function LoginPage() {
     if (!email || !password) {
       setError('Please enter both email and password.');
     } else {
-      // Implement login logic here
-      console.log('Logging in with:', { email, password });
+      // Implement sign-in logic here
+      console.log('Signing in with:', { email, password });
       setError('');
       // Redirect to the dashboard or home page
     }
   };
 
   return (
-    <div className="login-container">
-      <div className="login-box">
-        <FaUserCircle className="login-icon" />
+    <div className="signin-container">
+      <div className="signin-box">
+        <FaUserCircle className="signin-icon" />
         <h2>Welcome Back</h2>
-        <p>Login to your account</p>
+        <p>Sign in to your account</p>
         <form onSubmit={handleSubmit}>
           <div className="textbox">
             <input
@@ -57,17 +57,17 @@ function LoginPage() {
             </div>
           </div>
           {error && <div className="error-message">{error}</div>}
-          <button type="submit" className="btn-login">Login</button>
+          <button type="submit" className="btn-signin">Sign In</button>
         </form>
         <div className="forgot-password">
           <Link to="/forgot-password">Forgot password?</Link>
         </div>
         <div className="signin-link">
-          <p>Don't have an account? <Link to="/signin">Sign In</Link></p> {/* Link to Sign In page */}
+          <p>Already have an account? <Link to="/login">Login</Link></p> {/* Link to Login page */}
         </div>
       </div>
     </div>
   );
 }
 
-export default LoginPage;
+export default SignInPage;

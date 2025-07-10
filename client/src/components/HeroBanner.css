@@ -1,18 +1,27 @@
+/* Hero Banner Styles */
 .hero-banner {
-  background: linear-gradient(to right, #1a1a1a, #0f0f0f);
+  background: linear-gradient(to right, #ff7f50, #ff6347);  /* Gradients for vibrant colors */
   color: white;
   padding: 60px 40px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: background 0.5s ease; /* Smooth background transition */
 }
 
 .hero-banner h1 {
   font-size: 3rem;
   margin-bottom: 10px;
+  animation: fadeIn 2s ease-out;  /* Add fade-in animation */
 }
 
 .hero-banner p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+  animation: fadeIn 2s ease-out 0.5s; /* Delay the fade-in for paragraph */
 }
 
 .hero-banner button {
@@ -23,8 +32,23 @@
   color: white;
   font-size: 1rem;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;  /* Smooth button hover transition */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
 }
 
 .hero-banner button:hover {
   background-color: #e63e3e;
+  transform: scale(1.1); /* Slightly enlarge button on hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Enhance the shadow on hover */
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
