@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SplashScreen from './components/SplashScreen';
 import Dashboard from './pages/Dashboard';
-import UploadPage from './pages/UploadPage';
+import UploadPage from './components/UploadPage';
 import SignInPage from './pages/SignInPage';  // Import SignInPage
 import LoginPage from './pages/LoginPage';  // Import LoginPage
 import PrivateRoute from './components/PrivateRoute';
