@@ -1,28 +1,39 @@
 import React, { useState } from 'react';
-import './LoginPage.css';  // Correct CSS file for Login Page
-import { FaEye, FaEyeSlash, FaUserCircle } from 'react-icons/fa';  // Icons
-import { Link } from 'react-router-dom';  // For routing
+import './LoginPage.css';
+import { FaEye, FaEyeSlash, FaUserCircle } from 'react-icons/fa';
+import { Link, useNavigate } from 'react-router-dom';
+import axios from '../axiosConfig'; // ⬅️ Import axios instance
 
 function LoginPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
   const [error, setError] = useState('');
+  const navigate = useNavigate(); // ⬅️ For redirection
 
   const togglePasswordVisibility = () => {
     setIsPasswordVisible(!isPasswordVisible);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!email || !password) {
       setError('Please enter both email and password.');
-    } else {
-      // Implement login logic here
-      console.log('Logging in with:', { email, password });
-      setError('');
-      // Redirect to the dashboard or home page
+      return;
+    }
+
+    try {
+      const response = await axios.post('/auth/login', { email, password });
+
+      // Save token to localStorage
+      localStorage.setItem('token', response.data.token);
+
+      // Redirect to profile page
+      navigate('/profile');
+
+    } catch (err) {
+      setError(err.response?.data?.message || 'Login failed. Please try again.');
     }
   };
 
@@ -63,7 +74,7 @@ function LoginPage() {
           <Link to="/forgot-password">Forgot password?</Link>
         </div>
         <div className="signin-link">
-          <p>Don't have an account? <Link to="/signin">Sign In</Link></p> {/* Link to Sign In page */}
+          <p>Don't have an account? <Link to="/signin">Sign In</Link></p>
         </div>
       </div>
     </div>
