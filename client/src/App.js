@@ -7,6 +7,7 @@ import SignInPage from './pages/SignInPage';  // Import SignInPage
 import LoginPage from './pages/LoginPage';  // Import LoginPage
 import PrivateRoute from './components/PrivateRoute';
 import ProfileDropdown from './components/ProfileDropdown';  // Import ProfileDropdown
+import Navbar from './components/navBar';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -22,7 +23,7 @@ function App() {
         <SplashScreen />
       ) : (
         <div className="App">
-          <ProfileDropdown />
+          <Navbar />
           
           <Routes>
             {/* Route to Dashboard */}
@@ -36,9 +37,7 @@ function App() {
             <Route
               path="/upload"
               element={
-                <PrivateRoute>
                   <UploadPage />
-                </PrivateRoute>
               }
             />
           </Routes>
